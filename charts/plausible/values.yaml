@@ -1,0 +1,61 @@
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  repository: ghcr.io/plausible/community-edition
+  tag: v2.1.4
+  pullPolicy: IfNotPresent
+
+clickhouse:
+  image:
+    repository: clickhouse/clickhouse-server
+    tag: 24.3.3.102-alpine
+    pullPolicy: IfNotPresent
+  persistence:
+    storageClass: longhorn
+    size: 10Gi
+  service:
+    port: 8123
+
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  host: analytics.example.com
+  tls:
+    enabled: true
+    secretName: plausible-tls
+
+config:
+  baseUrl: https://analytics.example.com
+  disableRegistration: "false"
+  smtp:
+    host: ""
+    port: "587"
+    sslEnabled: "true"
+    user: ""
+    password: ""
+    fromEmail: ""
+
+postgresql:
+  host: postgres-db01-postgresql.database.svc.cluster.local
+  port: 5432
+  database: plausible
+  user: plausible
+
+resources:
+  plausible:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  clickhouse:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi

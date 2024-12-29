@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "plausible.fullname" . }}-clickhouse
+  labels:
+    {{- include "plausible.clickhouse.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: {{ .Values.clickhouse.service.port }}
+      name: http
+  selector:
+    {{- include "plausible.clickhouse.selectorLabels" . | nindent 4 }} 
