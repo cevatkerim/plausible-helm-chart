@@ -32,11 +32,14 @@ jobs:
           helm repo index . --url https://cevatkerim.github.io/plausible-helm-chart
           mv *.tgz ../../
           mv index.yaml ../../
-      - name: Create index.html
+      - name: Create artifacthub-repo.yml
         run: |
-          echo '<!DOCTYPE html><html><head><title>Plausible Analytics Helm Chart</title></head><body>' > index.html
-          cat README.md >> index.html
-          echo '</body></html>' >> index.html
+          cat > artifacthub-repo.yml << 'EOL'
+          repositoryID: 50762809-e39e-49ae-8a9a-46514f0d5f80
+          owners:
+            - name: Kerim Incedayi
+              email: k@kerim.me
+          EOL
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
