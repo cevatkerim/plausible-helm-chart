@@ -1,6 +1,6 @@
 # Plausible Analytics Helm Chart
 
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/plausible)](https://artifacthub.io/packages/helm/plausible/plausible)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/plausible)](https://artifacthub.io/packages/search?repo=plausible)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Releases downloads](https://img.shields.io/github/downloads/cevatkerim/plausible-helm-chart/total.svg)](https://github.com/cevatkerim/plausible-helm-chart/releases)
 
