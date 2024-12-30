@@ -1,0 +1,5 @@
+owner: cevatkerim
+git-repo: plausible-helm-chart
+package-path: .cr-release-packages
+index-path: .cr-index
+push: true
