@@ -2,7 +2,7 @@ apiVersion: v2
 name: plausible
 description: A Helm chart for Plausible Analytics
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: "2.1.4"
 maintainers:
   - name: Kerim Incedayi
