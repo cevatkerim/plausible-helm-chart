@@ -25,6 +25,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Package Helm chart
+        run: |
+          cd charts/plausible
+          helm package .
+          helm repo index . --url https://cevatkerim.github.io/plausible-helm-chart
+          mv *.tgz ../../
+          mv index.yaml ../../
       - name: Create index.html
         run: |
           echo '<!DOCTYPE html><html><head><title>Plausible Analytics Helm Chart</title></head><body>' > index.html
