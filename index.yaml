@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  plausible:
+  - apiVersion: v2
+    appVersion: 2.1.4
+    created: "2024-12-30T14:12:25.186883444Z"
+    description: A Helm chart for Plausible Analytics
+    digest: 7d509f981a5e7eed8672010bfc8966241f0bdec9ed6d7c2b21bbbac720ca4a67
+    maintainers:
+    - email: k@kerim.me
+      name: Kerim Incedayi
+    name: plausible
+    type: application
+    urls:
+    - https://github.com/cevatkerim/plausible-helm-chart/releases/download/plausible-0.1.2/plausible-0.1.2.tgz
+    version: 0.1.2
+generated: "2024-12-30T14:12:25.186889766Z"
